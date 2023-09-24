@@ -3,11 +3,10 @@
 Дан текст. Определить, сколько различных букв в нем.
 '''
 text = input()
-letters = {}
+letters = []
 
-for i in text:
-    if i not in letters.keys() and i.isalpha():
-        letters[i] = 1
-    elif i.isalpha():
-        letters[i] += 1
-print(letters[max(letters)])
+for char in text:
+    if char not in letters and char.isalpha():
+        letters.append(char)
+
+print(len(letters))
