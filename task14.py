@@ -30,3 +30,44 @@ a
 тигр
 Победа!
 '''
+hint = input('Подсказка: ')
+word = input('Слово: ')
+
+print('\n' * 25)
+
+print(f'Подсказка: {hint}')
+current_word = ['*'] * len(word)
+
+
+def letter_indices(letter, word):
+    indices = []
+    inx = 0
+    while word.find(letter, inx) != -1:
+        inx = word.find(letter, inx)
+        print(inx)
+        indices.append(inx)
+        inx += 1
+    return indices
+
+
+for step in range(10):
+    print(f'Осталось попыток: {10 - step}')
+    mode = int(input('Буква или слово (0 - буква, 1 - слово)? '))
+    if mode == 0:
+        letter = input()
+        indicies = letter_indices(letter, word)
+        for i in indicies:
+            current_word[i] = word[i]
+        print(''.join(current_word))
+        if ''.join(current_word) == word:
+            print('Победа!')
+            break
+    elif mode == 1:
+        attempt = input()
+        if attempt == word:
+            print('Победа!')
+        else:
+            print('Проигрыш!')
+        break
+else:
+    print('Проигрыш!')
