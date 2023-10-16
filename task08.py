@@ -4,5 +4,11 @@
 '''
 # sentence = 'мама ыл раму'
 sentence = input()
-sorted_word_list = sorted(sentence.split(), key=len)
+sentence_new = (sentence.replace('.', '')
+            .replace('!', '')
+            .replace('?', '')
+            .replace(',', '')
+            .replace(':', '')
+            .replace(';', ''))
+sorted_word_list = sorted(sentence_new.split(), key=len)
 print(' '.join(sorted_word_list))

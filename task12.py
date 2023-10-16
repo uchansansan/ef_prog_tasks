@@ -5,3 +5,13 @@
 ключевым словом. Напишите программу, которая проверяет введенную строку, может ли
 она быть именем в языке Python.
 '''
+import keyword
+
+name = input()
+if name.isidentifier() and not keyword.iskeyword(name):
+    print('Valid')
+else:
+    print('Invalid')
+
+#имя может содержать не только латинские буквы
+переменная = "имя"

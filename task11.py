@@ -7,3 +7,20 @@
 Игрок выигрывает, если он назвал слово последним. Однако, игрок проигрывает, если он
 первым нарушил правила игры.
 '''
+in_cities = 'москва астрахан норильск'
+cities = in_cities.split()
+cnt = 1
+
+for i in range(2, len(cities) + 1):
+    if cities[i - 2][-1] == cities[i - 1][0]:
+        cnt += 1
+    else:
+        if i % 2 == 0:
+            print('Вася lose')
+        else:
+            print('Петя lose')
+
+if cnt % 2 == 0:
+    print('Вася win')
+else:
+    print('Петя win')
