@@ -4,31 +4,6 @@
 текста с выравниванием по ширине, перенося слова в следующую строку и расставляя
 равномерно нужное количество пробелов между словами.
 '''
-#text = input()
-# text = 'Мама мыла раму'
-# r = range(0, len(text))
-# print(text.center(len(text)*2-1))
-# print(' '.join([str(i) for i in r]).center(len(text)*2-1))
-#
-# #num = int(input())
-# num = 5
-# prev_i = 0
-# num_rows = len(text)//num
-#
-# out = []
-# while text:
-#     print(num, len(text))
-#     try:
-#         if text[num] == ' ':
-#             out.append(text[:num])
-#             text = text[num:]
-#         else:
-#             out.append(text[:num])
-#             text = text[num:]
-#     except:
-#         break
-# print(out)
-
 def format_text(text, column_width):
     words = text.split()
     formatted_lines = []
@@ -70,12 +45,10 @@ def format_text(text, column_width):
 
     return result
 
-# Пример использования
+
 text = input("Введите текст: ")
 column_width = int(input("Введите ширину колонки: "))
 
 formatted_text = format_text(text, column_width)
 print("Результат форматирования:")
 print(formatted_text)
-
-
